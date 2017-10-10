@@ -1,0 +1,46 @@
+{
+    "name": "apex-structure",
+    "displayName": "apex-structure",
+    "description": "Provides an overview structure of the apex class currently in focus.",
+    "version": "0.0.1",
+    "publisher": "msc",
+    "engines": {
+        "vscode": "^1.16.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onView:apexStructure"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "views": {
+            "explorer": [
+                {
+                    "id": "apexStructure",
+                    "name": "Apex Structure",
+                    "when": "resourceLangId == 'apex'"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test",
+        "compile-apex-structure": "npm run compile"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^7.0.43",
+        "typescript": "^2.5.3",
+        "vscode": "^1.1.5"
+    },
+    "dependencies": {
+        "jsforce": "^1.8.0",
+        "jsonc-parser": "^1.0.0"
+    }
+}
